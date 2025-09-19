@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LandingPage from './LandingPage';
 import AuctionPlatform from './AuctionPlatform';
-import './App.css';
+// Remove App.css import since it doesn't exist
 
 function App() {
   const [showAuctionPlatform, setShowAuctionPlatform] = useState(false);

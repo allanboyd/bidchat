@@ -1,32 +1,10 @@
-import React, { useState } from 'react';
-import { MessageCircle, Shield, Globe, Zap, Users, TrendingUp, CheckCircle, Star, ArrowRight, Play, Award, Lock, Smartphone, CreditCard, BarChart3, Target, Clock, DollarSign } from 'lucide-react';
+import { useState } from 'react';
+import { MessageCircle, Shield, Users, CheckCircle, Star, ArrowRight, Play, Lock, Smartphone, CreditCard, BarChart3, Target } from 'lucide-react';
 
 const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [pricingToggle, setPricingToggle] = useState('monthly');
 
-const features = [
-  {
-    icon: <MessageCircle className="w-8 h-8 text-[#1A2A80]" />,
-    title: "WhatsApp-First Experience",
-    description: "2.5B users globally. No app downloads required. Conversational AI guides every step."
-  },
-  {
-    icon: <Shield className="w-8 h-8 text-[#3B38A0]" />,
-    title: "Guaranteed Escrow",
-    description: "Deposits locked before bidding. Instant settlement on win. Full buyer protection."
-  },
-  {
-    icon: <Globe className="w-8 h-8 text-[#7A85C1]" />,
-    title: "Multilingual Support",
-    description: "English, French, Swahili, Arabic, Portuguese. Voice notes for low literacy users."
-  },
-  {
-    icon: <Zap className="w-8 h-8 text-[#B2B0E8]" />,
-    title: "Intelligent Bidding",
-    description: "AI-powered recommendations. Anti-collusion detection. Dynamic pricing guidance."
-  }
-];
 
   const stats = [
     { number: "2.5B+", label: "WhatsApp Users" },
