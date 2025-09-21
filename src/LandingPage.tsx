@@ -278,8 +278,8 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
                       className="w-full h-64 object-cover rounded-2xl shadow-lg"
                     />
                   </div>
-                </div>
-
+                    </div>
+                    
                 {/* Step 2 */}
                 <div 
                   ref={(el) => { cardRefs.current[1] = el; }}
@@ -296,8 +296,8 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
                       <div className="text-sm font-bold tracking-wider mb-1" style={{color: '#071952'}}>STEP 2</div>
                       <h3 className="text-lg font-semibold" style={{color: '#071952'}}>AI-guided verification</h3>
                     </div>
-                  </div>
-                  
+                        </div>
+                        
                   {/* Custom Bid Image */}
                   <div className="relative overflow-hidden rounded-3xl group-hover:scale-105 transition-transform duration-500">
                     <img 
@@ -305,8 +305,8 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
                       alt="Verification process" 
                       className="w-full h-96 object-cover rounded-3xl shadow-xl"
                     />
-                  </div>
-                </div>
+                          </div>
+                        </div>
                         
                 {/* Step 3 */}
                 <div 
@@ -323,8 +323,8 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
                     <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-100">
                       <div className="text-sm font-bold tracking-wider mb-1" style={{color: '#071952'}}>STEP 3</div>
                       <h3 className="text-lg font-semibold" style={{color: '#071952'}}>Start bidding & win</h3>
+                      </div>
                     </div>
-                  </div>
                   
                   {/* Custom Bid Image */}
                   <div className="relative overflow-hidden rounded-2xl group-hover:scale-105 transition-transform duration-500">
@@ -392,7 +392,7 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-[#071952] to-[#0B666A] bg-clip-text text-transparent">
-                How our platform makes your workflow
+              How our platform makes your workflow
               </span>
               <span className="block mt-2" style={{color: '#35A29F'}}>easier</span>
             </h2>
@@ -412,13 +412,13 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
                 <div className="mb-8">
                   <h3 className="text-2xl font-bold mb-4" style={{color: '#071952'}}>Leading AI Models to work with</h3>
                   <p className="text-gray-600 text-lg leading-relaxed">Access and chat with leading closed and open-source AI models in one easy to use interface.</p>
-                </div>
+                  </div>
                 
                 <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0 lg:space-x-6">
                   <div className="bg-white px-6 py-3 rounded-xl flex items-center shadow-lg border border-gray-100">
                     <span className="text-sm font-medium" style={{color: '#071952'}}>WhatsApp</span>
                     <ArrowRight className="w-4 h-4 ml-3" style={{color: '#0B666A'}} />
-                  </div>
+                </div>
                   
                   <div className="flex space-x-3">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg" style={{backgroundColor: '#071952'}}>AI</div>
@@ -481,13 +481,13 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
                       <span className="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-md border border-gray-100" style={{color: '#071952'}}>Admin</span>
                       <span className="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-md border border-gray-100" style={{color: '#071952'}}>Research</span>
                     </div>
-                  </div>
-                  
+                </div>
+                
                   <div className="flex-shrink-0 w-full lg:w-96">
-                    <div className="relative">
-                      <input 
-                        type="text" 
-                        placeholder="What should I do..." 
+                <div className="relative">
+                  <input 
+                    type="text" 
+                    placeholder="What should I do..." 
                         className="w-full px-6 py-4 pr-14 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:border-transparent text-lg shadow-lg"
                         style={{'--tw-ring-color': '#071952'} as React.CSSProperties}
                       />
@@ -496,7 +496,7 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
                         style={{background: 'linear-gradient(135deg, #071952 0%, #0B666A 100%)'}}
                       >
                         <ArrowRight className="w-5 h-5 text-white" />
-                      </button>
+                  </button>
                     </div>
                   </div>
                 </div>
@@ -634,7 +634,7 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-[#071952] to-[#0B666A] bg-clip-text text-transparent">
-                Get started in 4 simple steps
+              Get started in 4 simple steps
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -648,7 +648,7 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
             <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-[#071952] via-[#0B666A] to-[#35A29F] opacity-30"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
-              {processSteps.map((step, index) => (
+            {processSteps.map((step, index) => (
                 <div key={index} className="relative group">
                   {/* Step Card */}
                   <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group-hover:scale-105 relative overflow-hidden">
@@ -661,14 +661,14 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
                         <div className="relative">
                           <div className="w-20 h-20 text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform duration-300" 
                                style={{background: `linear-gradient(135deg, ${'#071952'} 0%, ${'#0B666A'} 100%)`}}>
-                            {step.step}
-                          </div>
+                    {step.step}
+                  </div>
                           <div className="absolute -top-2 -right-2 w-10 h-10 rounded-xl flex items-center justify-center shadow-lg bg-white border-2 border-gray-100 group-hover:scale-110 transition-transform duration-300" 
                                style={{borderColor: '#35A29F'}}>
                             <div className="text-lg" style={{color: '#35A29F'}}>{step.icon}</div>
-                          </div>
-                        </div>
-                      </div>
+                  </div>
+                </div>
+              </div>
 
                       {/* Content */}
                       <div className="text-center">
