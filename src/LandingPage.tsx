@@ -522,96 +522,183 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Column - Features with Images */}
+            <div className="lg:col-span-7">
               <div className="space-y-8">
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-6 bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{backgroundColor: '#071952'}}>
-                      <Users className="w-6 h-6 text-white" />
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg" style={{background: 'linear-gradient(135deg, #071952 0%, #0B666A 100%)'}}>
+                      <Users className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Flexible Data Transfer</h3>
-                    <p className="text-gray-600">Seamless integration with existing systems and multiple payment methods</p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-3" style={{color: '#071952'}}>Flexible Data Transfer</h3>
+                    <p className="text-gray-600 mb-4">Seamless integration with existing systems and multiple payment methods</p>
+                    <div className="flex space-x-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-6 bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{backgroundColor: '#0B666A'}}>
-                      <BarChart3 className="w-6 h-6 text-white" />
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg" style={{background: 'linear-gradient(135deg, #0B666A 0%, #35A29F 100%)'}}>
+                      <BarChart3 className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Powerful Reporting Tools</h3>
-                    <p className="text-gray-600">Real-time analytics and insights to optimize your auction performance</p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-3" style={{color: '#071952'}}>Powerful Reporting Tools</h3>
+                    <p className="text-gray-600 mb-4">Real-time analytics and insights to optimize your auction performance</p>
+                    <div className="flex space-x-1">
+                      <div className="w-12 h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="w-8 h-full bg-gradient-to-r from-[#071952] to-[#0B666A] rounded-full"></div>
+                      </div>
+                      <div className="w-16 h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="w-12 h-full bg-gradient-to-r from-[#0B666A] to-[#35A29F] rounded-full"></div>
+                      </div>
+                      <div className="w-20 h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="w-16 h-full bg-gradient-to-r from-[#35A29F] to-[#97FEED] rounded-full"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-6 bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{backgroundColor: '#35A29F'}}>
-                      <Target className="w-6 h-6 text-white" />
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg" style={{background: 'linear-gradient(135deg, #35A29F 0%, #97FEED 100%)'}}>
+                      <Target className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Personalized Goals</h3>
-                    <p className="text-gray-600">AI-driven recommendations based on your bidding history and preferences</p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-3" style={{color: '#071952'}}>Personalized Goals</h3>
+                    <p className="text-gray-600 mb-4">AI-driven recommendations based on your bidding history and preferences</p>
+                    <div className="flex items-center space-x-4">
+                      <div className="text-center">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#071952] to-[#0B666A] flex items-center justify-center text-white font-bold text-sm">85%</div>
+                        <div className="text-xs text-gray-500 mt-1">Success</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#0B666A] to-[#35A29F] flex items-center justify-center text-white font-bold text-sm">24h</div>
+                        <div className="text-xs text-gray-500 mt-1">Avg Time</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#35A29F] to-[#97FEED] flex items-center justify-center text-white font-bold text-sm">$2.4K</div>
+                        <div className="text-xs text-gray-500 mt-1">Avg Win</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-6 bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{backgroundColor: '#97FEED', color: '#071952'}}>
-                      <Lock className="w-6 h-6" style={{color: '#071952'}} />
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg" style={{background: 'linear-gradient(135deg, #97FEED 0%, #071952 100%)'}}>
+                      <Lock className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Secure Wallet Access</h3>
-                    <p className="text-gray-600">Bank-grade security with multi-currency support and escrow protection</p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-3" style={{color: '#071952'}}>Secure Wallet Access</h3>
+                    <p className="text-gray-600 mb-4">Bank-grade security with multi-currency support and escrow protection</p>
+                    <div className="flex items-center space-x-2">
+                      <div className="flex space-x-1">
+                        <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-green-600 rounded flex items-center justify-center">
+                          <Lock className="w-3 h-3 text-white" />
+                        </div>
+                        <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-blue-600 rounded flex items-center justify-center">
+                          <Shield className="w-3 h-3 text-white" />
+                        </div>
+                        <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-purple-600 rounded flex items-center justify-center">
+                          <CreditCard className="w-3 h-3 text-white" />
+                        </div>
+                      </div>
+                      <span className="text-sm font-medium text-gray-600 ml-2">Multi-layer Security</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
-              {/* Custom Image Background */}
-              <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                <img 
-                  src="/images/bid1.jpg" 
-                  alt="Bidding process" 
-                  className="w-full h-full object-cover rounded-3xl"
-                />
-              </div>
-              
-              <div className="relative z-10">
-                <h4 className="text-xl font-semibold mb-6" style={{color: '#071952'}}>Ready to transform your auction experience?</h4>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700">WhatsApp Integration</span>
-                    <CheckCircle className="w-5 h-5" style={{color: '#071952'}} />
+            {/* Right Column - Visual Element */}
+            <div className="lg:col-span-5">
+              <div className="relative">
+                {/* Main Visual Card */}
+                <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                  {/* Custom Image Background */}
+                  <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                    <img 
+                      src="/images/bid2.jpg" 
+                      alt="Bidding process" 
+                      className="w-full h-full object-cover rounded-3xl"
+                    />
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700">AI-Powered Bidding</span>
-                    <CheckCircle className="w-5 h-5" style={{color: '#0B666A'}} />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700">Real-time Auctions</span>
-                    <CheckCircle className="w-5 h-5" style={{color: '#35A29F'}} />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700">Secure Payments</span>
-                    <CheckCircle className="w-5 h-5" style={{color: '#97FEED'}} />
+                  
+                  <div className="relative z-10">
+                    <h4 className="text-2xl font-bold mb-6" style={{color: '#071952'}}>Ready to transform your auction experience?</h4>
+                    
+                    {/* Visual Stats */}
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                        <div className="text-2xl font-bold mb-1" style={{color: '#071952'}}>98%</div>
+                        <div className="text-sm text-gray-600">Success Rate</div>
+                      </div>
+                      <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                        <div className="text-2xl font-bold mb-1" style={{color: '#0B666A'}}>24/7</div>
+                        <div className="text-sm text-gray-600">Support</div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="flex items-center justify-between bg-white rounded-lg p-3 shadow-sm">
+                        <span className="text-gray-700 font-medium">WhatsApp Integration</span>
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between bg-white rounded-lg p-3 shadow-sm">
+                        <span className="text-gray-700 font-medium">AI-Powered Bidding</span>
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between bg-white rounded-lg p-3 shadow-sm">
+                        <span className="text-gray-700 font-medium">Real-time Auctions</span>
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between bg-white rounded-lg p-3 shadow-sm">
+                        <span className="text-gray-700 font-medium">Secure Payments</span>
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-teal-400 to-teal-600 flex items-center justify-center">
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={onGetStarted}
+                      className="w-full text-white py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                      style={{background: `linear-gradient(135deg, #071952 0%, #0B666A 100%)`}}
+                    >
+                      Get Started Now
+                    </button>
                   </div>
                 </div>
-                <button
-                  onClick={onGetStarted}
-                  className="w-full mt-6 text-white py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-                  style={{background: `linear-gradient(to right, ${'#071952'}, ${'#0B666A'})`}}
-                >
-                  Get Started
-                </button>
+
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-[#35A29F] to-[#97FEED] rounded-2xl flex items-center justify-center shadow-lg opacity-80">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-r from-[#071952] to-[#0B666A] rounded-xl flex items-center justify-center shadow-lg opacity-80">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
               </div>
             </div>
           </div>
@@ -953,44 +1040,54 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style={{backgroundColor: '#f3f4f6', color: '#0B666A'}}>
+      <section id="pricing" className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        {/* Background Visual Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-[#071952]/10 to-[#0B666A]/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-[#35A29F]/10 to-[#97FEED]/10 rounded-full blur-xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium mb-8 bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg">
+              <div className="w-2 h-2 rounded-full mr-3 animate-pulse" style={{backgroundColor: '#071952'}}></div>
               [BidChat Pricing]
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#071952'}}>
-              Simple and transparent
-              <span style={{color: '#0B666A'}}> pricing</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-[#071952] to-[#0B666A] bg-clip-text text-transparent">
+                Simple and transparent
+              </span>
+              <span className="block mt-2" style={{color: '#35A29F'}}>pricing</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Choose the plan that fits your needs. No hidden fees, no surprises.
             </p>
           </div>
 
-          <div className="flex justify-center mb-8">
-            <div className="bg-gray-100 rounded-lg p-1">
+          <div className="flex justify-center mb-12">
+            <div className="bg-white rounded-2xl p-2 shadow-lg border border-gray-200">
               <button
                 onClick={() => setPricingToggle('monthly')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                   pricingToggle === 'monthly' 
-                    ? 'text-white shadow-sm' 
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-white shadow-lg transform scale-105' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
-                style={pricingToggle === 'monthly' ? {backgroundColor: '#071952'} : {}}
+                style={pricingToggle === 'monthly' ? {background: 'linear-gradient(135deg, #071952 0%, #0B666A 100%)'} : {}}
               >
                 Monthly
               </button>
               <button
                 onClick={() => setPricingToggle('annually')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                   pricingToggle === 'annually' 
-                    ? 'text-white shadow-sm' 
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-white shadow-lg transform scale-105' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
-                style={pricingToggle === 'annually' ? {backgroundColor: '#071952'} : {}}
+                style={pricingToggle === 'annually' ? {background: 'linear-gradient(135deg, #071952 0%, #0B666A 100%)'} : {}}
               >
                 Annually
+                <span className="ml-2 px-2 py-1 text-xs rounded-full bg-white/20">Save 20%</span>
               </button>
             </div>
           </div>
@@ -999,20 +1096,40 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl p-8 ${
+                className={`relative rounded-3xl p-8 group hover:scale-105 transition-all duration-500 ${
                   plan.popular 
-                    ? 'text-white shadow-2xl scale-105' 
-                    : 'bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow'
+                    ? 'text-white shadow-2xl' 
+                    : 'bg-white border border-gray-100 shadow-lg hover:shadow-2xl'
                 }`}
-                style={plan.popular ? {background: `linear-gradient(to bottom right, ${'#071952'}, ${'#0B666A'})`} : {}}
+                style={plan.popular ? {background: `linear-gradient(135deg, #071952 0%, #0B666A 100%)`} : {}}
               >
+                {/* Floating Background Elements */}
+                <div className={`absolute inset-0 rounded-3xl opacity-5 group-hover:opacity-10 transition-opacity duration-500 ${
+                  plan.popular ? 'bg-white' : 'bg-gradient-to-br from-[#071952] to-[#0B666A]'
+                }`}></div>
+
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="px-4 py-1 rounded-full text-sm font-semibold" style={{backgroundColor: '#35A29F', color: 'white'}}>
-                      Most Popular
-                    </span>
+                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-[#35A29F] to-[#97FEED] px-6 py-2 rounded-full text-sm font-semibold text-white shadow-lg">
+                      ⭐ Most Popular
+                    </div>
                   </div>
                 )}
+
+                {/* Visual Indicator */}
+                <div className="absolute top-6 right-6">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${
+                    plan.popular 
+                      ? 'bg-white/20' 
+                      : 'bg-gradient-to-r from-[#071952] to-[#0B666A]'
+                  }`}>
+                    {plan.popular ? (
+                      <Star className="w-6 h-6 text-white" />
+                    ) : (
+                      <Target className="w-6 h-6 text-white" />
+                    )}
+                  </div>
+                </div>
                 
                 <div className="text-center mb-8">
                   <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
@@ -1033,9 +1150,13 @@ const LandingPage = ({ onGetStarted }: { onGetStarted: () => void }) => {
 
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <CheckCircle className={`w-5 h-5 mr-3 ${plan.popular ? 'text-green-300' : 'text-green-500'}`} />
-                      <span className={plan.popular ? 'text-purple-100' : 'text-gray-600'}>
+                    <li key={featureIndex} className="flex items-center bg-white/10 rounded-lg p-3">
+                      <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-4 ${
+                        plan.popular ? 'bg-white/20' : 'bg-gradient-to-r from-green-400 to-green-600'
+                      }`}>
+                        <CheckCircle className={`w-4 h-4 ${plan.popular ? 'text-white' : 'text-white'}`} />
+                      </div>
+                      <span className={`font-medium ${plan.popular ? 'text-white' : 'text-gray-700'}`}>
                         {feature}
                       </span>
                     </li>
