@@ -27,11 +27,11 @@ type ThemeName = 'emerald' | 'blue' | 'purple' | 'red' | 'orange';
 
 // Theme configurations
 const themes: Record<ThemeName, Theme> = {
-  emerald: { primary: 'bg-gradient-to-r from-blue-600 to-sky-600', secondary: 'bg-blue-50', accent: 'text-blue-600' },
-  blue: { primary: 'bg-gradient-to-r from-blue-600 to-sky-600', secondary: 'bg-blue-50', accent: 'text-blue-600' },
-  purple: { primary: 'bg-gradient-to-r from-blue-600 to-sky-600', secondary: 'bg-blue-50', accent: 'text-blue-600' },
-  red: { primary: 'bg-gradient-to-r from-blue-600 to-sky-600', secondary: 'bg-blue-50', accent: 'text-blue-600' },
-  orange: { primary: 'bg-gradient-to-r from-blue-600 to-sky-600', secondary: 'bg-blue-50', accent: 'text-blue-600' }
+  emerald: { primary: 'bg-gradient-to-r from-[#071952] to-[#0B666A]', secondary: 'bg-gray-50', accent: 'text-[#071952]' },
+  blue: { primary: 'bg-gradient-to-r from-[#0B666A] to-[#35A29F]', secondary: 'bg-teal-50', accent: 'text-[#0B666A]' },
+  purple: { primary: 'bg-gradient-to-r from-[#35A29F] to-[#97FEED]', secondary: 'bg-cyan-50', accent: 'text-[#35A29F]' },
+  red: { primary: 'bg-gradient-to-r from-[#97FEED] to-[#071952]', secondary: 'bg-blue-50', accent: 'text-[#97FEED]' },
+  orange: { primary: 'bg-gradient-to-r from-[#071952] to-[#97FEED]', secondary: 'bg-green-50', accent: 'text-[#071952]' }
 };
 
 // Utility function for conditional classes
@@ -42,7 +42,7 @@ const sampleLots: Lot[] = [
   {
     id: 'LOT-001',
     title: 'Vintage Rolex Submariner',
-    img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop',
+    img: 'https://picsum.photos/400/300?random=1',
     currency: 'USD',
     buyout: 15000,
     topBid: 12000
@@ -50,7 +50,7 @@ const sampleLots: Lot[] = [
   {
     id: 'LOT-002',
     title: 'Antique Persian Rug',
-    img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop',
+    img: 'https://picsum.photos/400/300?random=2',
     currency: 'USD',
     buyout: 8500,
     topBid: 7200
@@ -58,7 +58,7 @@ const sampleLots: Lot[] = [
   {
     id: 'LOT-003',
     title: 'Modern Art Painting',
-    img: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=300&fit=crop',
+    img: 'https://picsum.photos/400/300?random=3',
     currency: 'USD',
     buyout: 12000,
     topBid: 9800
@@ -66,7 +66,7 @@ const sampleLots: Lot[] = [
   {
     id: 'LOT-004',
     title: 'Classic Gibson Les Paul Guitar',
-    img: 'https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?w=400&h=300&fit=crop',
+    img: 'https://picsum.photos/400/300?random=4',
     currency: 'USD',
     buyout: 8500,
     topBid: 7200
@@ -74,7 +74,7 @@ const sampleLots: Lot[] = [
   {
     id: 'LOT-005',
     title: 'Vintage Omega Speedmaster',
-    img: 'https://images.unsplash.com/photo-1594534475808-b18fc33b045e?w=400&h=300&fit=crop',
+    img: 'https://picsum.photos/400/300?random=5',
     currency: 'USD',
     buyout: 12000,
     topBid: 9800
@@ -82,7 +82,7 @@ const sampleLots: Lot[] = [
   {
     id: 'LOT-006',
     title: 'Rare First Edition Book Collection',
-    img: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop',
+    img: 'https://picsum.photos/400/300?random=6',
     currency: 'USD',
     buyout: 5500,
     topBid: 4200
@@ -100,23 +100,25 @@ const sampleRules: Rule[] = [
 function RulesView({ rules }: { rules: Rule[] }) {
   return (
     <div className="p-4 space-y-4">
-      <div className="rounded-2xl border border-blue-100 p-4 bg-white shadow-sm">
-        <div className="text-sm text-blue-600 mb-2 font-medium">Auction Rules</div>
+      <div className="rounded-2xl border p-4 bg-white shadow-sm" style={{borderColor: '#e5e7eb'}}>
+        <div className="text-sm mb-2 font-medium" style={{color: '#0B666A'}}>Auction Rules</div>
         <div className="space-y-2">
           {rules.map((r, i) => (
             <div key={i} className="flex items-center justify-between">
               <div className="text-sm font-medium text-gray-900">{r.name}</div>
               <div className={cls("mt-1 text-xs px-2 py-1 rounded-full inline-block border", 
-                r.status.includes("Enabled") ? "bg-blue-50 text-blue-700 border-blue-200" : "bg-gray-50 text-gray-600 border-gray-200"
-              )}>
+                r.status.includes("Enabled") ? "border-green-200" : "bg-gray-50 text-gray-600 border-gray-200"
+              )}
+              style={r.status.includes("Enabled") ? {backgroundColor: '#f0fdf4', color: '#166534'} : {}}
+              >
                 {r.status}
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="rounded-2xl border border-blue-100 p-4 bg-white shadow-sm">
-        <div className="text-sm text-blue-600 mb-2 font-medium">Settlement & Fees</div>
+      <div className="rounded-2xl border p-4 bg-white shadow-sm" style={{borderColor: '#e5e7eb'}}>
+        <div className="text-sm mb-2 font-medium" style={{color: '#0B666A'}}>Settlement & Fees</div>
         <ul className="text-sm text-gray-700 list-disc pl-6 space-y-1">
           <li>Guarantee deposits locked to escrow before bidding.</li>
           <li>Instant settlement on win; fallback pay-now link if insufficient funds.</li>
@@ -132,30 +134,45 @@ function RulesView({ rules }: { rules: Rule[] }) {
 function InstagramView({ lots, onShare }: { lots: Lot[]; onShare: (lot: Lot) => void }) {
   return (
     <div className="p-4 space-y-4">
-      <div className="rounded-2xl border border-blue-100 p-4 bg-white shadow-sm flex items-center justify-between">
-        <div className="flex items-center gap-2 text-blue-600 text-sm font-medium">
+      <div className="rounded-2xl border p-4 bg-white shadow-sm flex items-center justify-between" style={{borderColor: '#e5e7eb'}}>
+        <div className="flex items-center gap-2 text-sm font-medium" style={{color: '#0B666A'}}>
           <Instagram className="w-4 h-4"/> Instagram Channel
         </div>
         <div className="text-xs text-gray-500">Graph API: messaging, story mentions, deep links</div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {lots.map(l => (
-          <div key={l.id} className="rounded-2xl border border-blue-100 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
-            <img src={l.img} alt={l.title} className="w-full h-48 object-cover"/>
+          <div key={l.id} className="rounded-2xl border overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow" style={{borderColor: '#e5e7eb'}}>
+            <img 
+              src={l.img} 
+              alt={l.title} 
+              className="w-full h-48 object-cover"
+              onError={(e) => {
+                e.currentTarget.src = 'https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Product+Image';
+              }}
+            />
             <div className="p-3 space-y-1">
-              <div className="text-xs text-blue-600 font-medium">{l.id}</div>
+              <div className="text-xs font-medium" style={{color: '#0B666A'}}>{l.id}</div>
               <div className="font-medium line-clamp-1 text-gray-900">{l.title}</div>
               <div className="text-sm text-gray-600">Buy-out {l.currency} {l.buyout.toLocaleString()}</div>
               <div className="pt-2 flex items-center gap-2">
                 <button 
                   onClick={() => onShare(l)} 
-                  className="px-3 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-sky-600 text-white hover:from-blue-700 hover:to-sky-700 transition-all duration-300"
+                  className="px-3 py-2 rounded-xl text-white transition-all duration-300"
+                  style={{background: `linear-gradient(to right, ${'#071952'}, ${'#0B666A'})`}}
                 >
                   Share to DM
                 </button>
                 <button 
                   onClick={() => onShare(l)} 
-                  className="px-3 py-2 rounded-xl border border-blue-200 text-blue-600 hover:bg-blue-50 transition-colors"
+                  className="px-3 py-2 rounded-xl border transition-colors"
+                  style={{borderColor: '#0B666A', color: '#0B666A'}}
+                  onMouseEnter={(e) => {
+                    (e.target as HTMLElement).style.backgroundColor = '#f3f4f6';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.target as HTMLElement).style.backgroundColor = 'transparent';
+                  }}
                 >
                   Story
                 </button>
@@ -164,7 +181,7 @@ function InstagramView({ lots, onShare }: { lots: Lot[]; onShare: (lot: Lot) => 
           </div>
         ))}
       </div>
-      <div className="p-3 rounded-xl border border-blue-100 bg-blue-50 text-xs text-blue-700">
+      <div className="p-3 rounded-xl border bg-gray-50 text-xs text-gray-700" style={{borderColor: '#e5e7eb'}}>
         Demo: clicking Share opens the Instagram DM simulator. In production, deep-link to Instagram/threads or use the Graph API to initiate a reply with product card + CTA.
       </div>
     </div>
@@ -283,20 +300,23 @@ function CoreAppView({ lots, theme }: { lots: Lot[]; theme: ThemeName }) {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Auction Lots</h1>
+          <h1 className="text-3xl font-bold mb-2" style={{color: '#071952'}}>Auction Lots</h1>
           <p className="text-gray-600">Browse and bid on our featured auction items</p>
         </div>
         
         {/* Product Grid - 2x3 Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {lots.map(lot => (
-            <div key={lot.id} className="bg-white rounded-2xl border border-blue-100 overflow-hidden hover:shadow-lg transition-shadow duration-200 shadow-sm">
+            <div key={lot.id} className="bg-white rounded-2xl border overflow-hidden hover:shadow-lg transition-shadow duration-200 shadow-sm" style={{borderColor: '#e5e7eb'}}>
               {/* Product Image */}
               <div className="relative">
                 <img 
                   src={lot.img} 
                   alt={lot.title} 
                   className="w-full h-48 object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Product+Image';
+                  }}
                 />
                 {/* Lot ID Badge */}
                 <div className="absolute top-3 left-3">
@@ -339,14 +359,21 @@ function CoreAppView({ lots, theme }: { lots: Lot[]; theme: ThemeName }) {
                   </button>
                   <button 
                     onClick={() => handleBuyOut(lot)}
-                    className="flex-1 py-2.5 px-4 rounded-xl border border-blue-200 text-blue-700 font-medium text-sm hover:bg-blue-50 transition-colors duration-200"
+                    className="flex-1 py-2.5 px-4 rounded-xl border font-medium text-sm transition-colors duration-200"
+                    style={{borderColor: '#0B666A', color: '#0B666A'}}
+                    onMouseEnter={(e) => {
+                      (e.target as HTMLElement).style.backgroundColor = '#f3f4f6';
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.target as HTMLElement).style.backgroundColor = 'transparent';
+                    }}
                   >
                     Buy Out
                   </button>
                 </div>
                 
                 {/* Additional Info */}
-                <div className="flex items-center justify-between text-xs text-gray-500 pt-2 border-t border-blue-100">
+                <div className="flex items-center justify-between text-xs text-gray-500 pt-2 border-t" style={{borderColor: '#e5e7eb'}}>
                   <span>Ends in 2h 15m</span>
                   <span>12 bidders</span>
                 </div>
@@ -699,17 +726,17 @@ export default function AuctionPlatform() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen" style={{backgroundColor: '#f8f9fa'}}>
       {/* Header */}
-      <div className="bg-white/95 backdrop-blur-md border-b border-blue-100/50 shadow-sm">
+      <div className="bg-white/95 backdrop-blur-md border-b shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo Section */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-sky-600 rounded-xl flex items-center justify-center shadow-md">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-md" style={{background: `linear-gradient(to bottom right, ${'#071952'}, ${'#0B666A'})`}}>
                 <MessageCircle className="w-6 h-6 text-white" />
               </div>
-              <h1 className="text-xl font-semibold text-gray-900">BidChat - Auction Platform</h1>
+              <h1 className="text-xl font-semibold" style={{color: '#071952'}}>BidChat - Auction Platform</h1>
             </div>
             
             {/* Theme Selector */}
@@ -717,7 +744,8 @@ export default function AuctionPlatform() {
               <select 
                 value={selectedTheme} 
                 onChange={(e) => setSelectedTheme(e.target.value as ThemeName)}
-                className="px-4 py-2 border border-blue-200 rounded-full text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm"
+                className="px-4 py-2 border rounded-full text-sm bg-white shadow-sm"
+                style={{borderColor: '#071952', color: '#071952'}}
               >
                 <option value="emerald">Emerald</option>
                 <option value="blue">Blue</option>
@@ -731,7 +759,7 @@ export default function AuctionPlatform() {
       </div>
 
       {/* Navigation */}
-      <div className="bg-white/95 backdrop-blur-md border-b border-blue-100/50 shadow-sm">
+      <div className="bg-white/95 backdrop-blur-md border-b shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-2 py-3 h-12">
             {[
@@ -745,9 +773,20 @@ export default function AuctionPlatform() {
                 onClick={() => setCurrentView(item.id as 'rules' | 'instagram' | 'core' | 'whatsapp')}
                 className={`py-2 px-4 rounded-full font-medium text-sm transition-all duration-300 ${
                   currentView === item.id
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-white shadow-md'
+                    : 'text-gray-600 hover:bg-gray-50'
                 }`}
+                style={currentView === item.id ? {backgroundColor: '#071952', color: 'white'} : {}}
+                onMouseEnter={(e) => {
+                  if (currentView !== item.id) {
+                    (e.target as HTMLElement).style.color = '#0B666A';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (currentView !== item.id) {
+                    (e.target as HTMLElement).style.color = '#6B7280';
+                  }
+                }}
               >
                 {item.label}
               </button>
@@ -763,32 +802,38 @@ export default function AuctionPlatform() {
         {currentView === 'core' && <CoreAppView lots={sampleLots} theme={selectedTheme} />}
         {currentView === 'whatsapp' && (
           <div className="p-4">
-            <div className="rounded-2xl border p-4 bg-white mb-4">
-              <div className="flex items-center gap-2 text-slate-600 text-sm mb-2">
+            <div className="rounded-2xl border p-4 bg-white mb-4" style={{borderColor: '#e5e7eb'}}>
+              <div className="flex items-center gap-2 text-sm mb-2" style={{color: '#0B666A'}}>
                 <MessageCircle className="w-4 h-4"/> WhatsApp Integration
               </div>
-              <div className="text-xs text-slate-500 mb-4">
+              <div className="text-xs text-gray-500 mb-4">
                 WhatsApp Business API: messaging, payments, catalog sharing
               </div>
               <button 
                 onClick={() => setWhatsappChatOpen(true)}
-                className="px-4 py-2 rounded-xl bg-green-500 text-white hover:bg-green-600"
+                className="px-4 py-2 rounded-xl text-white transition-colors"
+                style={{background: `linear-gradient(to right, ${'#071952'}, ${'#0B666A'})`}}
+                onMouseEnter={(e) => (e.target as HTMLElement).style.opacity = '0.9'}
+                onMouseLeave={(e) => (e.target as HTMLElement).style.opacity = '1'}
               >
                 Open WhatsApp Chat
               </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {sampleLots.map(l => (
-                <div key={l.id} className="rounded-2xl border overflow-hidden bg-white">
+                <div key={l.id} className="rounded-2xl border overflow-hidden bg-white" style={{borderColor: '#e5e7eb'}}>
                   <img src={l.img} alt={l.title} className="w-full h-48 object-cover"/>
                   <div className="p-3 space-y-1">
-                    <div className="text-xs text-slate-500">{l.id}</div>
+                    <div className="text-xs text-gray-500">{l.id}</div>
                     <div className="font-medium line-clamp-1">{l.title}</div>
-                    <div className="text-sm text-slate-600">Buy-out {l.currency} {l.buyout.toLocaleString()}</div>
+                    <div className="text-sm text-gray-600">Buy-out {l.currency} {l.buyout.toLocaleString()}</div>
                     <div className="pt-2">
                       <button 
                         onClick={() => handleWhatsAppShare()} 
-                        className="w-full px-3 py-2 rounded-xl bg-green-500 text-white hover:bg-green-600"
+                        className="w-full px-3 py-2 rounded-xl text-white transition-colors"
+                        style={{background: `linear-gradient(to right, ${'#071952'}, ${'#0B666A'})`}}
+                        onMouseEnter={(e) => (e.target as HTMLElement).style.opacity = '0.9'}
+                        onMouseLeave={(e) => (e.target as HTMLElement).style.opacity = '1'}
                       >
                         Share via WhatsApp
                       </button>
